@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCarbon - Protéger la nature, améliorer les vies</title>
+    <meta name="description" content="Projet EcoCarbon: solutions durables pour l'environnement et les communautés en Afrique">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/leaf.svg">
+    <style>
+        :root {
+            --primary-green: #0a7c3a;
+            --secondary-green: #2ecc71;
+            --dark-green: #0d5b2a;
+            --light-green: #d4edda;
+            --earth-brown: #8b4513;
+            --sun-yellow: #f1c40f;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10, 124, 58, 0.9) 0%, rgba(13, 91, 42, 0.9) 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background-color: var(--secondary-green);
+            margin: 1.5rem auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-green-700 text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-green-800">Eco<span class="text-green-600">Carbon</span></span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-green-800 font-medium hover:text-green-600 transition">Accueil</a>
+                    <a href="projet.html" class="text-gray-700 font-medium hover:text-green-600 transition">Le Projet</a>
+                    <a href="impact.html" class="text-gray-700 font-medium hover:text-green-600 transition">Impact & ODD</a>
+                    <a href="contact.html" class="text-gray-700 font-medium hover:text-green-600 transition">Contact</a>
+                </div>
+                
+                <!-- Bouton CTA Desktop -->
+                <div class="hidden md:block">
+                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-medium shadow-md">Nous Contacter</a>
+                </div>
+                
+                <!-- Menu Mobile Toggle -->
+                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-toggle">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div class="hidden md:hidden mt-4 pb-2" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-green-800 font-medium py-2 border-b border-gray-100">Accueil</a>
+                    <a href="projet.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Le Projet</a>
+                    <a href="impact.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Impact & ODD</a>
+                    <a href="contact.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded-full font-medium text-center mt-2">Nous Contacter</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-20 px-4 hero-gradient text-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Protéger la nature, améliorer les vies</h1>
+                    <p class="text-xl mb-8 text-green-100">EcoCarbon développe des solutions naturelles pour lutter contre le changement climatique et renforcer la résilience des communautés en Afrique.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="projet.html" class="bg-white text-green-800 px-8 py-3 rounded-full font-bold text-center hover:bg-green-50 transition duration-300 shadow-lg">Découvrir le projet</a>
+                        <a href="contact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-center hover:bg-white hover:text-green-800 transition duration-300">Nous contacter</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/20 p-4 rounded-xl">
+                                <i class="fas fa-tree text-3xl mb-2"></i>
+                                <h3 class="font-bold text-lg">Reboisement</h3>
+                                <p class="text-sm">Restaurer les écosystèmes forestiers</p>
+                            </div>
+                            <div class="bg-white/20 p-4 rounded-xl">
+                                <i class="fas fa-seedling text-3xl mb-2"></i>
+                                <h3 class="font-bold text-lg">Agriculture Durable</h3>
+                                <p class="text-sm">Techniques respectueuses de l'environnement</p>
+                            </div>
+                            <div class="bg-white/20 p-4 rounded-xl">
+                                <i class="fas fa-recycle text-3xl mb-2"></i>
+                                <h3 class="font-bold text-lg">Gestion des Déchets</h3>
+                                <p class="text-sm">Valorisation des déchets organiques</p>
+                            </div>
+                            <div class="bg-white/20 p-4 rounded-xl">
+                                <i class="fas fa-users text-3xl mb-2"></i>
+                                <h3 class="font-bold text-lg">Communautés</h3>
+                                <p class="text-sm">Impliquer les populations locales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Problématique -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">La problématique</h2>
+                <div class="section-divider"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">En Afrique, les changements climatiques exacerbent les défis environnementaux et socio-économiques, menaçant les moyens de subsistance de millions de personnes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                        <i class="fas fa-temperature-high text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Changements climatiques</h3>
+                    <p class="text-gray-600">Augmentation des températures, sécheresses prolongées et phénomènes météorologiques extrêmes affectant les récoltes et la sécurité alimentaire.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                        <i class="fas fa-tree text-yellow-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Déforestation</h3>
+                    <p class="text-gray-600">Perte de biodiversité et dégradation des terres due à l'exploitation non durable des forêts, réduisant la capacité d'absorption du CO₂.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover border border-gray-100">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Pauvreté énergétique</h3>
+                    <p class="text-gray-600">Accès limité à des sources d'énergie propres, forçant les communautés à dépendre du bois de chauffage et augmentant la pression sur les forêts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Solutions -->
+    <section class="py-16 px-4 bg-green-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos solutions naturelles</h2>
+                <div class="section-divider"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">EcoCarbon développe des solutions basées sur la nature, adaptées aux réalités locales et visant à créer un impact durable.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-forest text-green-700 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">Reboisement communautaire</h3>
+                            <p class="text-gray-600">Programmes de plantation d'arbres natifs avec les communautés locales pour restaurer les écosystèmes dégradés.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Espèces d'arbres adaptées au climat local</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Formation des communautés à l'agroforesterie</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Suivi et entretien des plantations</span></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-tractor text-green-700 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">Agriculture durable</h3>
+                            <p class="text-gray-600">Promotion de pratiques agricoles résilientes qui préservent les sols et augmentent les rendements.</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Techniques de conservation des sols et de l'eau</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Formation à l'agriculture biologique</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i> <span>Diversification des cultures pour la résilience</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Impacts attendus -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Impacts attendus</h2>
+                <div class="section-divider"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">EcoCarbon vise à créer des bénéfices tangibles pour l'environnement et les communautés locales à travers ses interventions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-4xl font-bold text-green-700 mb-2">50K+</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Arbres plantés</h3>
+                    <p class="text-sm text-gray-600">Restaurer les écosystèmes forestiers et capturer du CO₂</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-4xl font-bold text-green-700 mb-2">200+</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Agriculteurs formés</h3>
+                    <p class="text-sm text-gray-600">À des pratiques agricoles durables et résilientes</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-4xl font-bold text-green-700 mb-2">10K</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Tonnes de CO₂</h3>
+                    <p class="text-sm text-gray-600">Séquestrées annuellement grâce à nos projets</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-4xl font-bold text-green-700 mb-2">5K+</div>
+                    <h3 class="font-bold text-gray-800 mb-2">Bénéficiaires directs</h3>
+                    <p class="text-sm text-gray-600">Amélioration des conditions de vie dans les communautés</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="impact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-lg inline-flex items-center">
+                    Voir tous nos impacts <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-10 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">Eco<span class="text-green-300">Carbon</span></span>
+                    </a>
+                    <p class="text-green-200 mb-4">Solutions durables pour l'environnement et les communautés en Afrique.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-green-200 hover:text-white transition">Accueil</a></li>
+                        <li><a href="projet.html" class="text-green-200 hover:text-white transition">Le Projet</a></li>
+                        <li><a href="impact.html" class="text-green-200 hover:text-white transition">Impact & ODD</a></li>
+                        <li><a href="contact.html" class="text-green-200 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Nos actions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Reboisement</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Agriculture durable</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Gestion des déchets</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Énergie renouvelable</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contactez-nous</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-300 mr-2 mt-1"></i>
+                            <span class="text-green-200">Dakar, Sénégal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-300 mr-2"></i>
+                            <span class="text-green-200">contact@ecocarbon.org</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-green-300 mr-2"></i>
+                            <span class="text-green-200">+221 33 123 45 67</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-800 mt-10 pt-6 text-center text-green-300">
+                <p>&copy; 2026 EcoCarbon. Tous droits réservés.</p> <br>
+                <p>Site conçu et développé par fayiladigitalhub</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

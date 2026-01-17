@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - EcoCarbon</title>
+    <meta name="description" content="Contactez EcoCarbon pour en savoir plus sur nos projets, partenariats ou pour soutenir nos initiatives">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Police Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/leaf.svg">
+    <!-- CSS personnalisé (identique à index.html) -->
+    <style>
+        :root {
+            --primary-green: #0a7c3a;
+            --secondary-green: #2ecc71;
+            --dark-green: #0d5b2a;
+            --light-green: #d4edda;
+            --earth-brown: #8b4513;
+            --sun-yellow: #f1c40f;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(10, 124, 58, 0.9) 0%, rgba(13, 91, 42, 0.9) 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        
+        .section-divider {
+            height: 4px;
+            width: 80px;
+            background-color: var(--secondary-green);
+            margin: 1.5rem auto;
+        }
+        
+        .form-input {
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(10, 124, 58, 0.1);
+        }
+        
+        .error {
+            border-color: #ef4444;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .success-message {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-green-700 text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-green-800">Eco<span class="text-green-600">Carbon</span></span>
+                </a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-green-600 transition">Accueil</a>
+                    <a href="projet.html" class="text-gray-700 font-medium hover:text-green-600 transition">Le Projet</a>
+                    <a href="impact.html" class="text-gray-700 font-medium hover:text-green-600 transition">Impact & ODD</a>
+                    <a href="contact.html" class="text-green-800 font-medium hover:text-green-600 transition">Contact</a>
+                </div>
+                
+                <!-- Bouton CTA Desktop -->
+                <div class="hidden md:block">
+                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-medium shadow-md">Nous Contacter</a>
+                </div>
+                
+                <!-- Menu Mobile Toggle -->
+                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-toggle">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div class="hidden md:hidden mt-4 pb-2" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Accueil</a>
+                    <a href="projet.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Le Projet</a>
+                    <a href="impact.html" class="text-gray-700 font-medium py-2 border-b border-gray-100">Impact & ODD</a>
+                    <a href="contact.html" class="text-green-800 font-medium py-2 border-b border-gray-100">Contact</a>
+                    <a href="contact.html" class="btn-primary px-6 py-3 rounded-full font-medium text-center mt-2">Nous Contacter</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-20 px-4 hero-gradient text-white">
+        <div class="container mx-auto">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Contactez EcoCarbon</h1>
+                <p class="text-xl text-green-100">Vous souhaitez en savoir plus sur nos projets, devenir partenaire, soutenir nos initiatives ou simplement échanger avec nous ? Nous serions ravis de vous entendre.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Contact -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Formulaire de contact -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Envoyez-nous un message</h2>
+                    <p class="text-gray-600 mb-8">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <!-- Message de succès (caché par défaut) -->
+                        <div id="success-message" class="success-message hidden">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                <span class="font-medium">Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Nom -->
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom et prénom">
+                            <div id="name-error" class="error-message hidden"></div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Adresse email *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com">
+                            <div id="email-error" class="error-message hidden"></div>
+                        </div>
+                        
+                        <!-- Sujet -->
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet *</label>
+                            <select id="subject" name="subject" class="form-input">
+                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                <option value="partenariat">Demande de partenariat</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="soutien">Soutien au projet</option>
+                                <option value="visite">Demande de visite terrain</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <div id="subject-error" class="error-message hidden"></div>
+                        </div>
+                        
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="6" class="form-input" placeholder="Votre message..."></textarea>
+                            <div id="message-error" class="error-message hidden"></div>
+                        </div>
+                        
+                        <!-- Bouton d'envoi -->
+                        <div>
+                            <button type="submit" class="btn-primary px-8 py-3 rounded-full font-bold text-lg w-full">
+                                <span id="submit-text">Envoyer le message</span>
+                                <span id="loading-spinner" class="hidden">
+                                    <i class="fas fa-spinner fa-spin ml-2"></i> Envoi en cours...
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <p class="text-sm text-gray-500">* Champs obligatoires</p>
+                    </form>
+                </div>
+                
+                <!-- Informations de contact -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Nos coordonnées</h2>
+                    <p class="text-gray-600 mb-8">Vous pouvez également nous contacter directement via les coordonnées ci-dessous.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-1">Notre siège</h3>
+                                    <p class="text-gray-600">RDC , kinshasa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-1">Email</h3>
+                                    <p class="text-gray-600">ecocarbon@gmail.com<</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-1">Téléphone</h3>
+                                    <p class="text-gray-600">+243 81 862 47 77</p>
+                                    <p class="text-gray-500 text-sm">Lundi - Vendredi, 9h - 17h (GMT)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-users text-green-700 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800 mb-1">Réseaux sociaux</h3>
+                                    <p class="text-gray-600 mb-2">Suivez-nous pour rester informé de nos activités</p>
+                                    <div class="flex space-x-4">
+                                        <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 hover:bg-green-200 transition">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 hover:bg-green-200 transition">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 hover:bg-green-200 transition">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 hover:bg-green-200 transition">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ -->
+                    <div class="mt-10 bg-green-50 p-6 rounded-xl border border-green-100">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Questions fréquentes</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Comment soutenir EcoCarbon ?</h4>
+                                <p class="text-sm text-gray-600">Vous pouvez nous soutenir en devenant partenaire financier, en partageant notre travail, ou en proposant votre expertise technique.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Puis-je visiter vos projets sur le terrain ?</h4>
+                                <p class="text-sm text-gray-600">Oui, nous organisons des visites terrain pour nos partenaires et donateurs. Contactez-nous pour planifier une visite.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">EcoCarbon travaille-t-il dans d'autres pays ?</h4>
+                                <p class="text-sm text-gray-600">Actuellement, nos projets pilotes sont au Sénégal, mais nous prévoyons de nous étendre à d'autres pays d'Afrique de l'Ouest d'ici 2024.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-green-900 text-white">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ensemble pour un avenir durable</h2>
+                <p class="text-xl text-green-100 mb-8">Que vous soyez une ONG, un bailleur de fonds, une institution publique ou une entreprise privée, il existe de nombreuses façons de collaborer avec EcoCarbon pour créer un impact positif en Afrique.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="projet.html" class="bg-white text-green-800 px-8 py-3 rounded-full font-bold text-center hover:bg-green-50 transition duration-300">Découvrir nos projets</a>
+                    <a href="impact.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold text-center hover:bg-white hover:text-green-800 transition duration-300">Voir notre impact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (identique à index.html) -->
+    <footer class="bg-green-900 text-white py-10 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-700 flex items-center justify-center">
+                            <i class="fas fa-leaf text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">Eco<span class="text-green-300">Carbon</span></span>
+                    </a>
+                    <p class="text-green-200 mb-4">Solutions durables pour l'environnement et les communautés en Afrique.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-green-200 hover:text-white transition">Accueil</a></li>
+                        <li><a href="projet.html" class="text-green-200 hover:text-white transition">Le Projet</a></li>
+                        <li><a href="impact.html" class="text-green-200 hover:text-white transition">Impact & ODD</a></li>
+                        <li><a href="contact.html" class="text-green-200 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Nos actions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Reboisement</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Agriculture durable</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Gestion des déchets</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Énergie renouvelable</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contactez-nous</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-300 mr-2 mt-1"></i>
+                            <span class="text-green-200">RDC, kinshasa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-300 mr-2"></i>
+                            <span class="text-green-200">ecocarbon@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-green-300 mr-2"></i>
+                            <span class="text-green-200">+243 81 862 47 77</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-800 mt-10 pt-6 text-center text-green-300">
+                <p>&copy; 2026 EcoCarbon. Tous droits réservés.</p> <br>
+                <p>Site conçu et développé par fayiladigitalhub</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
