@@ -16,7 +16,7 @@ EcoCarbon est un projet de développement durable basé sur les solutions nature
 ##  Pages du site
 - Accueil
 - Projet
-- Impact & ODD
+- Impact
 - Contact
 
 ##  Public cible
